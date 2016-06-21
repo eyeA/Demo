@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hover8</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.wrapper3{
+			margin: 100px auto;
+			position: relative;
+		}
+		.wrapper3:hover .bot-detail{
+			opacity: 1;
+			-webkit-transform: scale(0.5) translateX(0%);
+			-moz-transform: scale(0.5) translateX(0%);
+			-ms-transform: scale(0.5) translateX(0%);
+			-o-transform: scale(0.5) translateX(0%);
+			transform: scale(0.5) translateX(0%);
+		}
+		.wrapper3:hover .detail{
+			opacity: 1;
+			background-color: #eee;	
+			-webkit-transform: scale(1) translateX(0%);
+			-moz-transform: scale(1) translateX(0%);
+			-ms-transform: scale(1) translateX(0%);
+			-o-transform: scale1) translateX(0%);
+			transform: scale(1) translateX(0%);
+		}
+		.wrapper3:hover #img1{
+		    -webkit-transform: scale(0) translateX(0);
+		    -moz-transform: scale(0) translateX(0);
+		    -ms-transform: scale(0) translateX(0);
+		    -o-transform: scale(0) translateX(0);
+		    transform: scale(0) translateX(0);			
+		}
+		.wrapper3:hover .top-img{
+			pointer-events: none;
+			-webkit-transform: scale(0) translateX(-100%);
+			-moz-transform: scale(0) translateX(-100%);
+			-ms-transform: scale(0) translateX(-100%);
+			-o-transform: scale(0) translateX(-100%);
+			transform: scale(0) translateX(-100%);
+		}
+		.wrapper3:hover .top-img img{
+			opacity: 0;
+			pointer-events: none;
+		}
+		.wrapper3 a{
+			display: block;
+			text-decoration: none;
+		}
+		.main{
+			width: 300px;
+			height: 300px;
+		}
+		.top-img{
+		  -webkit-transform: scale(1) translateX(0);
+		  -moz-transform: scale(1) translateX(0);
+		  -ms-transform: scale(1) translateX(0);
+		  -o-transform: scale(1) translateX(0);
+		  transform: scale(1) translateX(0);
+		  -webkit-transition: all 0.3s ease-in-out;
+		  -moz-transition: all 0.3s ease-in-out;
+		  transition: all 0.3s ease-in-out;			
+		}
+		.spinner{	
+		}
+		#img1{
+			display: block;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			opacity: 1;
+			border-radius: 50%;
+			width: 320px;
+			height: 320px;
+			border: 10px solid #6cf;
+			border-top-color:green;
+			border-left-color:green;
+
+			-webkit-transform: scale(1) translateX(0);
+			-moz-transform: scale(1) translateX(0);
+			-ms-transform: scale(1) translateX(0);
+			-o-transform: scale(1) translateX(0);
+			transform: scale(1) translateX(0);
+
+			-webkit-transition: all 0.3s ease-in-out 0.3s;
+			-moz-transition: all 0.3s ease-in-out 0.3s;
+			transition: all 0.3s ease-in-out 0.3s;		
+		}
+		.bot-detail{
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			opacity: 0;
+  			pointer-events: none;
+  			-webkit-transition: all 0.3s ease-in-out 0.3s;
+  			-moz-transition: all 0.3s ease-in-out 0.3s;
+  			transition: all 0.3s ease-in-out 0.3s;
+			-webkit-transform: translateX(100%);
+			-moz-transform: translateX(100%);
+			-ms-transform: translateX(100%);
+			-o-transform: translateX(100%);
+			transform: translateX(100%);
+		}
+		.detail{
+			position: absolute;
+			border-radius: 50%;
+			top: 10px;
+			left: 10px;
+			opacity: 0;
+			text-align: center;
+
+			pointer-events: none;
+			-webkit-transform: scale(0.5) translateX(100%);
+			-moz-transform: scale(0.5) translateX(100%);
+			-ms-transform: scale(0.5) translateX(100%);
+			-o-transform: scale(0.5) translateX(100%);
+			transform: scale(0.5) translateX(100%);
+			-webkit-transition: all 0.35s ease-in-out 0.6s;
+			-moz-transition: all 0.35s ease-in-out 0.6s;
+			transition: all 0.35s ease-in-out 0.6s;
+		}
+		h1{
+			border-bottom: 2px dotted black;
+			width: 150px;
+			text-align: center;
+			margin:100px auto 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper3 main">
+		<a href="">
+			<div class="top-img main">
+				<img class="spinner main" id="img1" src="./3.jpg" alt="">
+			</div>
+			<div class="bot-detail main">
+				<div class="detail main">
+					<h1>title</h1>
+					<p>brief</p>
+				</div>				
+			</div>
+		</a>
+	</div>
+</body>
+</html>
