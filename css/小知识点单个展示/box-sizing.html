@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>box-sizing  and resize</title>
+	<style>
+		div{
+			border-radius: 50%;
+			margin: 20px;
+			text-align: center;
+		}
+		.test1{
+			width: 200px;
+			height: 200px;
+			box-sizing: content-box;
+			padding: 10px;
+			border: 10px solid #eee;
+			background: green;
+			float: left;
+		}
+		.test2{
+			width: 200px;
+			height: 200px;
+			box-sizing: border-box;
+			padding: 10px;
+			border: 10px solid #eee;
+			background: yellow;
+			float: left;
+		}
+		.resize{
+			height: 200px;
+			width: 200px;
+			margin: 0 auto;
+			text-align: center;
+			background: #eee;
+			resize: both;
+			overflow: auto;
+			/*这个overflow是必须加的*/
+			cursor: progress;
+			justify-content:center;
+			align-items:center;
+			display:-webkit-flex;
+		}
+		p{
+			/*margin-top: 50%;*/
+		}
+	</style>
+</head>
+<body>
+	<div class="test1"></div>
+	<div class="test2"></div>
+	<div style="clear:both;width:100%;background:red;color:white;height:20px;line-height:20px;">clear:both</div>
+	<div class="resize">
+		<p>
+			resizeresizeresizerresizeresizeresizer
+		</p>	
+	</div>
+</body>
+</html>

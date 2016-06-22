@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table表格</title>
+	<style>
+		h1{
+			font-family: Arial;
+			font-size: 20px;
+		}
+		.auto{
+			table-layout: auto;
+			width: 400px;
+		}
+		.fixed{
+			table-layout: fixed;
+			width: 400px;
+		}
+		.separate{
+			border-collapse:separate;
+			border-spacing:10px 20px;
+			/*border-spacing:只针对separate有效collapse无效*/
+			/*表格无内容时候显示或者隐藏边框 hide&&show*/
+			empty-cells: hide;
+		}
+		.collapse{
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+<body>
+	<h1>auto:表格自动算法</h1>
+	<table border="1" class="auto">
+		<tbody>
+			<tr>
+				<td>表格自动算法，宽度将基于单元格的内容自动拉伸</td>
+				<td>表格自动算法</td>
+				<td>表格自动算法</td>
+			</tr>
+			<tr>
+				<td>表格自动算法</td>
+				<td>表格自动算法</td>
+				<td>表格自动算法</td>
+			</tr>
+		</tbody>
+	</table>
+	<h1>fixed:表格固定算法</h1>
+	<table border="1" class="fixed">
+		<tbody>
+			<tr>
+				<td>表格固定算法布局</td>
+				<td>表格固定算法</td>
+				<td>表格固定算法</td>
+			</tr>
+			<tr>
+				<td>表格固定算法</td>
+				<td>表格固定算法</td>
+				<td>表格固定算法</td>
+			</tr>
+		</tbody>
+	</table>
+	<h1>border-collapse:separate|collapse(边框独立|相邻边合并)</h1>
+	<table border="1" class="separate">
+		<tbody>
+			<tr>
+				<td>表格固定算法布局</td>
+				<td>表格固定算法</td>
+				<td>表格固定算法</td>
+				<td>表格固定算法</td>
+			</tr>
+			<tr>
+				<td>表格固定算法</td>
+				<td>表格固定算法</td>
+				<td>表格固定算法</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table><br>
+	<table border="1" class="collapse">
+		<tbody>
+			<tr>
+				<td>表格固定算法布局</td>
+				<td>表格固定算法</td>
+				<td>表格固定算法</td>
+
+			</tr>
+			<tr>
+				<td>表格固定算法</td>
+				<td>表格固定算法</td>
+				<td>表格固定算法</td>
+			</tr>
+		</tbody>
+	</table>		
+</body>
+</html>

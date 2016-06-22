@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css绘图</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrapper{
+			width: 500px;
+			height: 500px;
+			background-color: #eee;
+			margin: 60px auto 0;
+			border-radius: 4px;
+		}
+		.wrapper div{
+			margin-right: 20px;
+			/*margin-bottom: 20px;*/
+			float: left;
+		}
+		.d1{
+			width: 0px;
+			height: 0px;
+			border-top: 40px solid rgba(0,0,0,0);
+			border-right: 40px solid rgba(0,0,0,0);
+			border-bottom: 40px solid yellow;
+			border-left: 40px solid rgba(0,0,0,0);
+
+			border-left-width: 0px;
+		}
+		.d2,.d3{
+			width: 80px;
+			height: 80px;
+		}
+		.d2{
+			width: 80px;
+			height: 80px;
+			background-color: #eee;
+			border-radius: 50%;
+			border: 6px solid green;
+		}
+		.d3{
+			height: 10px;
+			background-color: blue;
+			border-radius: 10px;
+			margin-top: 40px;
+			-webkit-transform:rotate(-45deg);
+			transform: rotate(-45deg)
+		}
+		.home{
+			background-color: pink;
+			height: 80px;
+			width: 80px;
+		}
+		.home_top{
+			width: 0px;
+			height: 0px;
+			border-top: 1px solid rgba(0,0,0,0);
+			border-right: 1px solid rgba(0,0,0,0);
+			border-bottom: 40px solid black;
+			border-left: 1px solid rgba(0,0,0,0);
+			border-left-width:40px;
+			border-right-width: 40px;
+		}
+		.home_bot{
+			width: 40px;
+			height: 20px;
+			margin-left: 10px;
+			background-color: black;
+			/*border-top: 10px solid pink;*/
+			/*border-top-width: 20px;*/
+			border-bottom: 10px solid pink;
+			border-bottom-width: 20px;
+			border-left:9px solid black;
+			border-left-width: 10px;
+			border-right-width: 10px;
+			border-right:9px solid black;
+
+		}
+		.d4{
+			width: 80px;
+			height: 80px;
+			border-radius: 20px;
+			background-color:red;
+			cursor: pointer;
+
+
+			-webkit-transition:all .1s ease-in .1s;
+			-moz-transition:all .1s ease-in .1s;
+			-o-transition:all .1s ease-in .1s;
+			-ms-transition:all .1s ease-in .1s;
+			transition:all .1s ease-in .1s;	
+
+		-webkit-transform:translateY(0%) rotate(0deg);
+		-moz-transform:translateY(0%) rotate(0deg);
+		-o-transform:translateY(0%) rotate(0deg);
+		-ms-transform:translateY(0%) rotate(0deg);
+		transform:translateY(0%) rotate(0deg);
+		}
+
+		.d4:hover{
+		-webkit-transform:translateY(100%) rotate(360deg);
+		-moz-transform:translateY(100%) rotate(360deg);
+		-o-transform:translateY(100%) rotate(360deg);
+		-ms-transform:translateY(100%) rotate(360deg);
+		transform:translateY(100%) rotate(360deg);
+		}
+	</style>
+</head>
+<body id="test">
+	<div class="wrapper">
+		<div class="d1"></div>
+		<div class="d2"></div>
+		<div class="d3"></div>
+		<div class="home">
+			<div class="home_top"></div>
+			<div class="home_bot"></div>
+		</div>
+		<div class="d4"></div>
+	</div>
+</body>
+</html>

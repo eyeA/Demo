@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js内部原理-4</title>
+</head>
+<body>
+	<script>
+		function b(x,y,a){
+			arguments[2] = 10;
+			alert(a);
+		}
+
+			b(1,2,3);  // 10
+			b(1,2);  // undefined
+
+	</script>
+
+</body>
+</html>
