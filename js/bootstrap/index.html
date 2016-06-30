@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>eyeseau</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+</head>
+<body>
+<div class="container">
+	<h2 class="page-header">导航<small>响应式设计</small></h2>
+	<!-- 导航部分开始 -->
+	<div class="navbar">
+		<div class="navbar-inner">
+			<a href="#" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</a>
+			<a href="#" class="brand">Bootstrap</a>
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li class="active"><a href="#">首页</a></li>
+					<li><a href="#">项目一</a></li>
+					<li><a href="#">项目二</a></li>
+				</ul>
+				<form action="" class="navbar-search">
+					<input type="text" class="search-query">
+				</form>
+				<ul class="nav pull-right">
+					<li><a href="#">登录</a></li>
+					<li class="divider-vertical"></li>
+					<li><a href="#">注册</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 导航部分结束 -->
+	
+	<!-- 主体部分开始 -->
+	<p class="lead">
+		<abbr title="HyperText Markup Language" class="initialism">HTML</abbr>
+		Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+	</p>
+	<p>
+		<blockquote class="pull-right">
+		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+		  <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+		</blockquote>		
+	</p>
+
+<!-- 表单 -->
+<p style="height:100px;"></p>
+	<!-- 表单2  -->
+	<form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Email</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" placeholder="Email">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">Password</label>
+    <div class="controls">
+      <input type="password" id="inputPassword" placeholder="Password">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <label class="checkbox">
+        <input type="checkbox"> Remember me
+      </label>
+      <button type="submit" class="btn">Sign in</button>
+    </div>
+  </div>
+<div class="form-actions">
+  <button type="submit" class="btn btn-primary">Save changes</button>
+  <button type="button" class="btn">Cancel</button>
+</div>  
+</form>
+
+<!--  -->
+<div class="input-prepend">
+  <span class="add-on">@</span>
+  <input class="span2" id="prependedInput" type="text" placeholder="Username">
+</div>
+<div class="input-append">
+  <input class="span2" id="appendedInput" type="text">
+  <span class="add-on">.00</span>
+</div>
+
+<div class="input-append">
+  <input class="span2" id="appendedInputButton" type="text">
+  <button class="btn" type="button">Go!</button>
+</div>
+
+<div class="input-append">
+  <input class="span2" id="appendedDropdownButton" type="text">
+  <div class="btn-group">
+    <button class="btn dropdown-toggle" data-toggle="dropdown">
+      Action
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      ...
+    </ul>
+  </div>
+</div>
+
+<div class="input-prepend">
+  <div class="btn-group">
+    <button class="btn dropdown-toggle" data-toggle="dropdown">
+      Action
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      ...
+    </ul>
+  </div>
+  <input class="span2" id="prependedDropdownButton" type="text">
+</div>
+
+
+<!-- 验证状态 -->
+<div class="control-group warning">
+  <label class="control-label" for="inputWarning">Input with warning</label>
+  <div class="controls">
+    <input type="text" id="inputWarning">
+    <span class="help-inline">Something may have gone wrong</span>
+  </div>
+</div>
+ 
+<div class="control-group error">
+  <label class="control-label" for="inputError">Input with error</label>
+  <div class="controls">
+    <input type="text" id="inputError">
+    <span class="help-inline">Please correct the error</span>
+  </div>
+</div>
+ 
+<div class="control-group info">
+  <label class="control-label" for="inputInfo">Input with info</label>
+  <div class="controls">
+    <input type="text" id="inputInfo">
+    <span class="help-inline">Username is already taken</span>
+  </div>
+</div>
+ 
+<div class="control-group success">
+  <label class="control-label" for="inputSuccess">Input with success</label>
+  <div class="controls">
+    <input type="text" id="inputSuccess">
+    <span class="help-inline">Woohoo!</span>
+  </div>
+</div>
+
+<!-- 按钮中的下拉菜单 -->
+<div class="btn-group">
+  <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> User</a>
+  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
+    <li><a href="#"><i class="icon-trash"></i> Delete</a></li>
+    <li><a href="#"><i class="icon-ban-circle"></i> Ban</a></li>
+    <li class="divider"></li>
+    <li><a href="#"><i class="i"></i> Make admin</a></li>
+  </ul>
+</div>
+
+<!-- 导航图标带有图标 -->
+
+<!-- 表单域 -->
+<div class="control-group">
+  <label class="control-label" for="inputIcon">Email address</label>
+  <div class="controls">
+    <div class="input-prepend">
+      <span class="add-on"><i class="icon-envelope"></i></span>
+      <input class="span2" id="inputIcon" type="text">
+    </div>
+  </div>
+</div>
+<!-- 按钮尺寸 -->
+<a class="btn btn-small" href="#"><i class="icon-star"></i> Star</a>
+<!-- 文字强调类 -->
+<p class="muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+<p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+<p class="text-error">Donec ullamcorper nulla non metus auctor fringilla.</p>
+<p class="text-info">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.</p>
+<p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr>is the best thing since sliced bread.
+
+<!-- 为了让标签页可切换，需要在.tab-content中创建一个带有唯一ID的.tab-pane -->
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>
+    <li><a href="#tab2" data-toggle="tab">Section 2</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <p>I'm in Section 1.</p>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <p>Howdy, I'm in Section 2.</p>
+    </div>
+  </div>
+</div>
+<!-- 面包屑 -->
+
+<ul class="breadcrumb">
+  <li><a href="#">首页</a> <span class="divider">/</span></li>
+  <li><a href="#">Library</a> <span class="divider">/</span></li>
+  <li class="active">Data</li>
+</ul>
+
+<!-- 分页 加大pagination-large
+pagination-centered对齐  左、右
+-->
+<div class="pagination">
+  <ul>
+    <li><a href="#">Prev</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</div>
+
+
+<!-- Hero块 一个轻量、灵活的用于展示网站重点内容的组件。很适合营销类或内容类网站。 -->
+<div class="hero-unit">
+  <h1>Hello, world!</h1>
+  <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <p>
+    <a class="btn btn-primary btn-large">
+      Learn more
+    </a>
+  </p>
+</div>
+
+<div class="page-header">
+  <h1>Example page header <small>Subtext for header</small></h1>
+</div>
+
+<!-- 缩略图 -->
+<ul class="thumbnails">
+  <li class="span4">
+    <a href="#" class="thumbnail">
+      <img data-src="holder.js/300x200" alt="缩略图">
+    </a>
+  </li>
+  ...
+</ul>
+<!-- 缩略图这样 把a换成div -->
+<ul class="thumbnails">
+  <li class="span4">
+    <div class="thumbnail">
+      <img data-src="holder.js/300x200" alt="">
+      <h3>Thumbnail label</h3>
+      <p>Thumbnail caption...</p>
+    </div>
+  </li>
+  ...
+</ul>
+
+<!--警告框 成功、警告和错误消息的样式 这个在safari和opera移动版浏览器兼容 看使用官网组件的警告框部分 -->
+<div class="alert">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Warning!</strong> Best check yo self, you're not looking too good.
+</div>
+<!-- 对于较长的信息，通过添加.alert-block类可以增加警告框上下方向的内补（padding）。 -->
+
+<div class="alert alert-block">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h4>Warning!</h4>
+  Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+</div>
+<!--class="alert alert-error" class="alert alert-success"  class="alert alert-info"    -->
+
+<!-- 进度条 主要是样式 和兼容性 ie很差 -->
+
+<!-- 下面是JavaScript插件 http://v2.bootcss.com/javascript.html -->
+
+<!-- 带有标题、正文、页脚按钮的对话框 -->
+<!-- Button to trigger modal -->
+<a href="#myModal" role="button" class="btn" data-toggle="modal">查看演示案例</a>
+ 
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>
+</div>
+	  <!-- 工具提示 bootstrap-tooltip.js   -->
+	  <!-- 警告框 bootstrap-alert.js -->
+	  <!-- 按钮 bootstrap-button.js -->
+	  <button type="button" class="btn btn-primary" data-loading-text="Loading...">Loading state</button>
+
+	  <!-- 折叠 bootstrap-collapse.js 给可折叠的组件，如手风琴式的切换和导航，提供基本和灵活的样式-->
+
+			<div class="accordion" id="accordion2">
+			  <div class="accordion-group">
+			    <div class="accordion-heading">
+			      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+			        Collapsible Group Item #1
+			      </a>
+			    </div>
+			    <div id="collapseOne" class="accordion-body collapse in">
+			      <div class="accordion-inner">
+			        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			      </div>
+			    </div>
+			  </div>
+			  <div class="accordion-group">
+			    <div class="accordion-heading">
+			      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+			        Collapsible Group Item #2
+			      </a>
+			    </div>
+			    <div id="collapseTwo" class="accordion-body collapse">
+			      <div class="accordion-inner">
+			        Anim pariatur cliche...
+			      </div>
+			    </div>
+			  </div>
+			</div>	  
+
+		<!-- 轮播来啦~~~轮播（Carousel） bootstrap-carousel.js -->
+
+				<div id="myCarousel" class="carousel slide">
+				  <ol class="carousel-indicators">
+				    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				    <li data-target="#myCarousel" data-slide-to="1"></li>
+				    <li data-target="#myCarousel" data-slide-to="2"></li>
+				  </ol>
+				  <!-- Carousel items -->
+				  <div class="carousel-inner">
+				    <div class="active item">141411441</div>
+				    <div class="item">3535353</div>
+				    <div class="item">85855</div>
+				  </div>
+				  <!-- Carousel nav -->
+				  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+				  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+				</div>
+		
+		<!-- 输入提示bootstrap-typeahead.js  通过添加data属性给页面元素注册输入提示功能； 通过JavaScript$('.typeahead').typeahead()需要设置autocomplete="off"以阻止浏览器的默认提示菜单遮盖Bootstrap的输入提示下拉菜单。-->
+			<input type="text" data-provide="typeahead">
+
+	</div>
+	<ul class="pager">
+		<li class="previous disabled"><a href="#">Previous</a></li>
+		<li class="next"><a href="#">Next</a></li>
+	</ul>	
+</div>
+</body>
+<script src="js/jquery-2.2.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</html>
