@@ -1,0 +1,9 @@
+# package #
+node_modules
+
+#os files
+*.DS_Store
+
+images
+src
+

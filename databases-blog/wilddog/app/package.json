@@ -1,0 +1,30 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eyea",
+    "blog",
+    "widldog"
+  ],
+  "author": "eyea",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "connect-mongo": "^1.1.0",
+    "connect-multiparty": "^2.0.0",
+    "cookie-parser": "^1.4.1",
+    "ejs": "^2.4.1",
+    "express": "^4.14.0",
+    "express-session": "^1.13.0",
+    "jquery": "^3.0.0",
+    "markdown": "^0.5.0",
+    "serve-favicon": "^2.3.0",
+    "showdown": "^1.4.2",
+    "wilddog": "^0.6.4"
+  }
+}
