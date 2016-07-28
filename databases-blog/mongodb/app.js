@@ -16,6 +16,22 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(flash());
 
+//  7-28补充
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+
+app.use(session({
+  secret: settings.cookieSecret,
+  key: settings.db,//cookie name
+  cookie: {maxAge: 1000 * 60 * 60 * 24 * 30},//30 days
+  store: new MongoStore({
+    db: settings.db,
+    host: settings.host,
+    port: settings.port,
+    url: 'mongodb://localhost/blog'
+  })
+}));
+//  完毕
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
