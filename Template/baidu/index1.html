@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript" src="./baiduTemplate.js"></script>
+
+	<div id="result"></div>
+
+<!-- 模板开始 -->
+	<script id="t1" type="text/html">
+		<div>
+			<h1>
+				Title: <%= title %>
+			</h1>
+
+			<% if(list.length > 1) { %>
+				
+				<h2>
+					输出list,共有<%= list.length %>个元素
+				</h2>
+
+				<ul>
+					<% for(var i=0;i<list.length;i++){ %>
+						<li>
+							<%= list[i] %>
+						</li>
+					<%}%>
+				</ul>
+
+
+			<% }else{ %>
+				<h2>没有数据。。</h2>
+			<%}%>		
+		</div>
+	</script>
+
+<!-- 模板结束 -->
+
+<!-- 使用模板 -->
+	<script type="text/javascript">
+		var data = 	{
+			'title' : '你好，eyea',
+			'list' : [
+				'list1',
+				'list2',
+				'list3'
+			]
+		};
+
+		var bt = baidu.template;
+
+		var html = bt('t1',data);
+
+		// 渲染
+		document.getElementById('result').innerHTML = html;
+	</script>
+</body>
+</html>
