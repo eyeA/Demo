@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript" src="./template.js"></script>
+	
+	<div id="show"></div>
+
+	<script type="text/html" id="test">
+		<h1>简洁语法：{{title}}</h1>
+		<ul>
+			{{each list as value i}}
+				<li>
+					索引 {{i+1}} : {{value}}
+				</li>
+			{{/each}}
+		</ul>
+	</script>
+
+	<script type="text/javascript">
+		var data = {
+		    title: '标签',
+		    list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+		};
+		var html = template('test', data);
+		document.getElementById('show').innerHTML = html;		
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript" src="./template-native.js"></script>
+
+	<div id="show"></div>
+
+	<!-- m模板开始 -->
+	<script type="text/html" id="y1">
+		<h1>标题是:<%=title%></h1>
+		<% if(list.length>1){ %>
+			<ul>
+				<% for(var i=0;i<list.length;i++) { %>
+					<li>
+						<%= list[i] %>
+					</li>
+				<% } %>
+			</ul>
+		<%}else{%> 
+			<h2>list数据暂时没有呢</h2>
+		<% } %>		
+	</script>
+	<!-- 模板结束 -->
+
+	<!-- 使用模板 -->
+	<script type="text/javascript">
+		var data = {
+			'title' : '腾讯',
+			'list' : ['1','2','3','4']
+		}
+
+		var html = template('y1',data);
+
+		document.getElementById('show').innerHTML = html;
+	</script>
+</body>
+</html>

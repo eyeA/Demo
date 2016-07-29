@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 引入 -->
+	<script type="text/javascript" src="./baiduTemplate.js"></script>
+	<!-- 数据显示 -->
+	<div id="show"></div>
+	<!-- 模板开始 -->
+	<script type="text/html" id='t1'>
+		<h1>标题是；<%= title %></h1>
+		<% if(list.length>1) { %>
+			<h2>这里输出list元素 共有个<%= list.length %>元素</h2>
+			<ul>
+				<% for(var i=0;i<list.length;i++) { %>
+					<li><%= list[i] %></li>
+				<% } %>
+			</ul>
+		<% }else{  %>
+			<h2>什么也没有呢。。。</h2>
+		<% }  %>
+	</script>
+	<!-- 模板结束 -->
+
+	<!-- 使用模板 -->
+	<script type="text/javascript">
+		var data = {
+			'title': 'welcome eyea ~~~',
+			'list' : ['1.first','2.second','3.third']
+		}
+
+		var bt=baidu.template;
+
+		var html = bt('t1',data);
+
+		document.getElementById('show').innerHTML = html;
+		
+	</script>
+</body>
+</html>
