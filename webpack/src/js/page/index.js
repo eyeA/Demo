@@ -7,7 +7,7 @@ var Provider = require('redux/react').Provider;
 var stores = require('AppStore');
  
 var redux = createRedux(stores);
- 
+
 var App = React.createClass({
     render: function() {
         return (
