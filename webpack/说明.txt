@@ -3,3 +3,6 @@
 1.self 是单独针对 webpack进行练习
 
 2.webpackgulp是webpack和gulp进行的练习；
+
+3.webpack-seed项目是clone自https://github.com/chemdemo/webpack-seed
+
