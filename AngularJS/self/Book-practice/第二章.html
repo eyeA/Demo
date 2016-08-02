@@ -5,17 +5,13 @@
 	<title>Document</title>
 </head>
 <body>
-	<div ng-app="" ng-controller="my">
+	<div ng-app="" ng-controller="my" ng-controller="hh">
 		<input type="text" name="" ng-model="name" placeholder="hello">
 		<h1>my name is {{name||'CHINA'}} </h1>
+
 		<h2>{{ clock }}</h2>
-		<h2>{{ clock2}}</h2>
+		<h2>{{ clock2.now }}</h2>
 	</div>
-
-
-
-
-
 
 	<script type="text/javascript" src='angular.js'></script>
 	<script type="text/javascript" src='第二章.js'></script>
