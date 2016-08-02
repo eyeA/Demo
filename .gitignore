@@ -6,3 +6,9 @@
 /.idea
 
 /npm-debug.log
+
+/node_modules
+/assets
+/.sass-cache
+./npm-debug.log
+.DS_Store
