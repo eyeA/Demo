@@ -1,0 +1,7 @@
+17:30 2016/8/2 星期二 
+1.angular.js是官方github上的项目（https://github.com/angular/angular.js） 
+
+2.self是practice
+
+
+  

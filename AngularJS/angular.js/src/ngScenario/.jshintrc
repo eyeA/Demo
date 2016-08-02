@@ -1,0 +1,19 @@
+{
+  "extends": "../../.jshintrc-base",
+  "globals": {
+    "window": false,
+
+    "angular": false,
+    "includes": false,
+    "asyncForEach": false,
+    "msie": false,
+    "browserTrigger": false,
+    "console": false,
+    "alert": false,
+    "_jQuery": false,
+    "angularInit": false,
+    "formatException": false,
+    "$runner": false,
+    "callerFile": false
+  }
+}
