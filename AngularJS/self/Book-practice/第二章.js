@@ -1,4 +1,5 @@
 function my($scope,$timeout){
+	// 第一个 
 	var updateClock = function(){
 		$scope.clock = new Date();
 		$timeout(function(){
