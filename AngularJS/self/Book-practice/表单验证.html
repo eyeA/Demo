@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<div ng-app='myApp'>
+		<div ng-controller="myController">
+			<form name="form" novalidate>
+			<!-- 屏蔽浏览器对表单的默认验证行为  novalidate -->
+				<label name='email'>Your email </label>
+				<input type="email" name="email" ng-model='email' placeholder="Email Adress">
+				<input type="text" name="" required placeholder="required">
+				<br> <input type="text" name="" ng-minlength='5'>
+				<br> <input type="text" name="" ng-pattern='[a-zA-Z'>
+				<input type="number" name="" placeholder="number">
+				<br>
+				<input type="url" name="homepage" ng-model='user.fackbook_url'>
+			</form>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript" src='angular.js'></script>
+	<script type="text/javascript" src='表单验证.js'></script>
+</body>
+</html>
