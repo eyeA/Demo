@@ -22,6 +22,7 @@ module.exports = {
             { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
         ]
     },
+
     //其它解决方案配置
     resolve: {
             //查找module的话从这里开始查找
