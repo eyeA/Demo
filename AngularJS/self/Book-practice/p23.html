@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+    <div id="emailEditor" ng-controller="MyController">
+      <input ng-model="to"
+           type="email"
+           placeholder="Recipient" />
+      <textarea ng-model="emailBody"></textarea>
+
+      <div id="emailPreview">
+       <pre>__ previewText __</pre>
+      </div>
+    </div>
+
+  <script type="text/javascript" src='angular.js'></script>
+  <script type="text/javascript" src='p23.js'></script>
+</body>
+</html>
