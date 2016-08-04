@@ -40,6 +40,11 @@ app.directive('myDirectivec', function(){
 			
 		// }
 		restrict: 'A',
-		template: '<a href="{{ myLink }}">{{ myText }}</a>'
+		replace: true,
+		template: '<a href="{{ myLink }}">{{ myText }}</a>',
+		scope: {
+			myLink:'@', //绑定策略
+			myText:'@'
+		}
 	};
 });
