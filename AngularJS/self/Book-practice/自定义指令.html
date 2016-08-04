@@ -11,13 +11,15 @@
 		</div> -->
 		<!-- <my-directive></my-directive> 这个对js中的restrict为E生效   -->
 		<div my-directive></div>
+		<h1 ng-init='greeting="Welcome eyeA"'>
+			The Greeting is {{greeting}}
+		</h1>
+		<p>=======像指令中传递数据--模板中的变量=====</p>
+		<div my-directivec my-link='https://www.baidu.com' my-text='属性 变量'>
+			
+		</div>
 	</div>
 		
-
-
-
-
-
 	<script type="text/javascript" src='angular.js'></script>
 	<script type="text/javascript" src='自定义指令.js'></script>
 </body>
