@@ -20,7 +20,7 @@ app.directive('myDirective', function(){
 		restrict:'A',
 		replace:true,
 		scope:{
-			myUrl:'=someAttr',
+			myUrl:'=someAttr',  //如果这里改成了@  查看下效果 ^_^
 			myLink:'@'
 		},
 		template:'\
