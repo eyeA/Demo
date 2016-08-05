@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>在指令中使用子作用域</title>
+</head>
+<body>
+	<div ng-app="myApp">
+		<div ng-controller="myController">
+			<div ng-show='2+2 == 5'>
+				ng-show='2+2 == 5'---> !5 不显示
+			</div>
+			<div ng-hide='2+2 == 5'>
+				ng-hide='2+2 == 5'----> !5 不显示
+			</div>
+			<div>
+				<input type="number" name="" ng-model='equation.x' ng-change='change()'>
+				<code>input输入数值(仅支持整数类型) *2 的结果是 {{equation.output}}</code>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src='angular.js'></script>
+	<script type="text/javascript" src='p66.js'></script>
+</body>
+</html>
