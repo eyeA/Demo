@@ -9,4 +9,8 @@ angular.module('myApp', [])
   $scope.submitForm = function() {
     alert("it works!");
   };
-});
+}).controller('counter',function($scope){
+	$scope.decreament = function(){
+		$scope.count -= 1	
+	}
+})

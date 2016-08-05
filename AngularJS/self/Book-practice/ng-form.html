@@ -26,6 +26,21 @@
   <button type="submit" ng-disabled="signup_form.$invalid">Submit All</button>
 </form>
 
+
+<div ng-controller="counter">
+  <button ng-click="count = count +1" ng-init="count = 0">Increment</button>
+  count: {{count}}
+  <button ng-click="decreament()">Decrecment</button>
+</div>
+
+
+
+
+
+
+
+
+
   <script type="text/javascript" src='angular.js'></script>
   <script type="text/javascript" src='ng-form.js'></script>  
 </body>
