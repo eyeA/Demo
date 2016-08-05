@@ -9,8 +9,19 @@ angular.module('myApp', [])
   $scope.submitForm = function() {
     alert("it works!");
   };
-}).controller('counter',function($scope){
+})
+
+.controller('counter',function($scope){
 	$scope.decreament = function(){
 		$scope.count -= 1	
 	}
 })
+
+.controller('cityController', ['$scope', function($scope){
+	$scope.cities = [
+		{name:'beijing'},
+		{name:'shanghai'},
+		{name:'hebei'},
+		{name:'tianjin'}
+	];
+}])

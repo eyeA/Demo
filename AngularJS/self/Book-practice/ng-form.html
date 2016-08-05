@@ -33,6 +33,15 @@
   <button ng-click="decreament()">Decrecment</button>
 </div>
 
+<div ng-controller="cityController">
+  <select ng-model='city' ng-options="city.name for city in cities">
+    <option value="">
+      Choose city
+    </option>
+  </select>
+  Best city: {{city.name}}
+</div>
+
 
 
 
