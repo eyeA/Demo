@@ -8,6 +8,9 @@
   input.ng-valid {
     border: 1px solid green;
   }
+  .red{
+    background-color: red;
+  }
 </style>
 </head>
 <body>
@@ -26,12 +29,15 @@
   <button type="submit" ng-disabled="signup_form.$invalid">Submit All</button>
 </form>
 
+<!-- count -->
 
 <div ng-controller="counter">
   <button ng-click="count = count +1" ng-init="count = 0">Increment</button>
   count: {{count}}
   <button ng-click="decreament()">Decrecment</button>
 </div>
+
+<!-- select options -->
 
 <div ng-controller="cityController">
   <select ng-model='city' ng-options="city.name for city in cities">
@@ -42,9 +48,15 @@
   Best city: {{city.name}}
 </div>
 
+<!-- ng-class -->
 
-
-
+<div ng-controller="classController">
+  <div ng-class="{red: x>5}">
+    YOU WON !
+  </div>
+  <button ng-click="x= generateNumber()" ng-init="x=0">Draw Number</button>
+  <p>Number is: {{ x }}</p>
+</div>
 
 
 

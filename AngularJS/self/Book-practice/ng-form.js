@@ -25,3 +25,9 @@ angular.module('myApp', [])
 		{name:'tianjin'}
 	];
 }])
+
+.controller('classController', ['$scope', function($scope){
+	$scope.generateNumber = function(){
+		return Math.floor(Math.random()*10+1)
+	}
+}])
