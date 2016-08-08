@@ -6,7 +6,7 @@ app.factory('greeter', function(){
 		greet: function(msg){
 			alert(msg);
 			count++;
-			console.log(count)
+			console.log(count);
 		},
 		end:function(msg){
 			alert(msg);
