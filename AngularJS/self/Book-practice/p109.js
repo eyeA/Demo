@@ -1,7 +1,15 @@
-var app = angular.module('myApp', [])
+var app = angular.module('myApp', []);
 
-.factory('greeter', ['', function(){
-	return function name(){
-		
-	};
-}])
+app.factory('greeter', function(){
+	return {
+		greet: function(msg){
+			alert(msg);
+		}
+	}
+})
+
+.controller('myController',function($scope,greeter){
+	$scope.sayHello = function(){
+		greeter.greet('Hello')
+	}
+})
