@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div ng-controller="HomeController">
+		<ul>
+			<li class="fade-in" ng-repeat="r in roommates">
+				{{ r }}
+			</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src='angular.js'></script>
+	<script type="text/javascript" src='angular-animate.js'></script>
+	<script type="text/javascript" src='p304.js'></script>
+</body>
+</html>
