@@ -1,22 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="ngAnimate">
 <head>
 	<meta charset="UTF-8">
 	<title>anguar 动画</title>
 	<link rel="stylesheet" type="text/css" href="P298.css">
 </head>
-<body>
-	<div class="fade-in"></div>
-	<div class="animation-review">animation-review</div>
+<body ng-app="ngAnimate">
 
+<h1>隐藏 DIV: <input type="checkbox" ng-model="myCheck"></h1>
 
-
-
-
-
-
+<div ng-hide="myCheck"></div>
 	<script type="text/javascript" src='angular.js'></script>
-	<script type="text/javascript" src='angular-animate.js'></script>
-	<script type="text/javascript" src='p297.js'></script>
+	<script type="text/javascript" src='angular-animate.js'></script> 
 </body>
 </html>

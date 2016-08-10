@@ -1,35 +1,17 @@
-.fade-in{
-	width: 100px;
-	height: 100px;
-	border: 1px solid green;
-	border-radius: 4px;
-	background-color: gray;
-	transition: 2s linear all;
-	-webkit-transition:2s linear all;
+div {
+  transition: all linear 0.5s;
+  background-color: lightblue;
+  height: 100px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
 }
-.fade-in:hover{
-	width: 50px;
-	height: 50px;
-}
-.animation-review{
-	width: 100px;
-	height: 100px;
-	border: 1px solid green;
-	border-radius: 4px;
-	background-color: gray;
-	animation:5s test;
-	-webkit-animation:5s test;
-	margin-top: 20px;
-	text-align: center;
-}
-@keyframes test{
-	0%{
-		color:red
-	}
-	50%{
-		color:green
-	}
-	100%{
-		color: white;
-	}
+
+.ng-hide {
+  height: 0;
+  width: 0;
+  background-color: transparent;
+  top:-200px;
+  left: 200px;
 }
