@@ -5,23 +5,22 @@
 	<title>angular动画-2</title>
 	<style type="text/css">
 		div{
-			width: 100px;
 			height: 100px;
-			background-color: gray;
+			background-color: green;
 			border: 1px solid green;
 			border-radius: 10px;
 			margin: 20px;
 		}
 		.ng-hide{
 			position: relative;
-			left: 0;
+			left: 200px;
 			top: 200px;
 		}
 	</style>
 </head>
 <body>
-	<div>隐藏DIV: <input type="checkbox" ng-model='ng-hide' name=""> </div>
-	<div class="ng-hide">2</div>
+	隐藏DIV: <input type="checkbox" ng-model='check'> 
+	<div ng-hide="check">2</div>
 
 	<script type="text/javascript" src='angular.js'></script>
 	<script type="text/javascript" src='angular-animate.js'></script>
