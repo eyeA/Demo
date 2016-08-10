@@ -3,6 +3,54 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style type="text/css">
+		.fade-in.ng-enter,
+		.fade-in.ng-leave{
+			transition: 2s linear all;
+			-webkit-transition: 2s linear all;
+		}
+		.fade-in.ng-enter{
+			opacity: 0;
+			color: green;
+		}
+		.fade-in.ng-enter-active{
+			opacity: 1;
+			color: black;
+		}
+		.fade-in.ng-leave{}
+		.fade-in.ng-leave.ng-leave-active{
+			opacity: 0;
+		}
+		/*以上是css3过渡*/
+		/*下面使用css关键帧动画*/
+		@keyframes animateView-enter{
+			from{opacity: 0}
+			to{opacity: 1}
+		}
+		@-webkit-keyframes animateView-enter{
+			from{opacity: 0}
+			to{opacity: 1}
+		}
+
+		@keyframes animateView-leave{
+			from{opacity: 1}
+			to{opacity: 0}
+		}
+		@-webkit-keyframes animateView-leave{
+			from{opacity: 1}
+			to{opacity: 0}
+		}
+		/*设置完关键帧之后，把动画简单的附加在ngAnimate添加的css样式中*/
+		.fade-in.ng-enter{
+			animation: 2s fade-in-enter-animation;
+			-webkit-animation: 2s fade-in-enter-animation;
+		}
+		.fade-in.ng-leave{
+			animation: 2s fade-in-leave-animation;
+			-webkit-animation: 2s fade-in-leave-animation;
+		}
+		/*其实在这里就可以观看效果了*/
+	</style>
 </head>
 <body>
 
