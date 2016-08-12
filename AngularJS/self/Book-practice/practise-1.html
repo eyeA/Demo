@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div ng-controller="myController">
+		<input type="text" name="" ng-model='person.name'>
+		<p>
+		标题是： {{person.name}}
+		</p>
+		<ul>
+			<li ng-repeat="(i,list) in lists">
+				数据{{i+1}}分别是-->{{list}};
+			</li>
+		</ul>
+	</div>
+
+
+
+<script type="text/javascript" src='angular.js'></script>
+<script type="text/javascript">
+	angular.module('myApp', [])
+		.controller('myController', ['$scope', function($scope){
+			$scope.lists=['a','b','c']
+		}])
+</script>
+</body>
+</html>
