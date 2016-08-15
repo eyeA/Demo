@@ -23,8 +23,10 @@
 				newTodo:'',
 				todos:[
 					{ text:'Add some todos here' }
-				]
+				],
+				a:1
 			},
+
 			methods:{
 				addTodo:function(){
 					var text = this.newTodo.trim();
@@ -36,7 +38,14 @@
 				removeTodo:function(index){
 					this.todos.splice(index,1)
 				}
-			}
+			},
+
+			created:function(){
+				console.log('a is ' + this.a)
+			},
+
+			
+
 		})
 	</script>
 </body>
