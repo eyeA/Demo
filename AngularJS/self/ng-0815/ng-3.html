@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>$watch</title>
+</head>
+<body ng-app='myApp'>
+	<div ng-controller="myController">
+		<input type="text" name="" ng-model='name'>
+		{{name}}
+		<br>
+		改变次数 {{count}}
+	</div>
+
+	<script type="text/javascript" src='angular.js'></script>
+<script type="text/javascript">
+	angular.module('myApp', [])
+		.controller('myController', ['$scope', function($scope){
+
+			$scope.name = '张三';
+			$scope.count = 0;
+			$scope.data = {
+				name:'Lisi'，
+				count:20
+			}
+
+			$scope.$watch('name',function(newValue,oldValue){
+					$scope.count ++;
+					if($scope.count>3){
+						$scope.name = '已经点击了3次了'
+					}
+			});
+
+			$scope.$watch('data',function(){
+
+			},true)
+
+			
+
+
+
+		}])
+</script>
+</body>
+</html>
