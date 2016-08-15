@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue</title>
+</head>
+<body>
+	<div id="app">
+		<p>{{message}}</p>
+		<input v-model='message'>
+		<ul>
+			<li v-for='todo in todos'>
+				{{todo.text}}
+			</li>
+		</ul>
+		<button v-on:click='rm'>
+			Reverse Message
+		</button>
+	</div>
+
+
+
+
+
+
+	<script type="text/javascript" src='vue.js'></script>
+	<script type="text/javascript">
+		new Vue({
+			el: '#app',
+			data:{
+				message:'Vue',
+				todos:[
+					{text:'No.1'},
+					{text:'No.2'},
+					{text:'No.3'}
+				]
+			},
+			methods:{
+				rm:function(){
+					this.message = this.message.split('').reverse().join('')
+				}
+			}
+		})
+	</script>
+</body>
+</html>
