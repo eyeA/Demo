@@ -15,7 +15,23 @@
 	<div ng-controller="myController">
 		<input type="text" name="" ng-model='name'>
 		{{name}}
+
+		<!-- ng-bind -->
+
+<!-- 		<input type="text" name="" ng-model='age'>
+		<div ng-bind="age"></div> -->
+
+<!-- 多个控制器 作用域和js是类似的-->
+
+		<div ng-controller="secondCtr">
+			<input type="next" name="" ng-model='name'>
+			{{name}}
+		</div>
+
 	</div>
+
+	
+
 
 
 
@@ -25,7 +41,10 @@
 	angular.module('myApp', [])
 		.controller('myController', ['$scope', function($scope){
 			// function($scope)里面的参数$scope是ng的依赖注入作用域
-
+			$scope.age = 40 || age
+		}])
+		.controller('secondCtr', ['$scope', function($scope){
+			
 		}])
 </script>
 </body>
