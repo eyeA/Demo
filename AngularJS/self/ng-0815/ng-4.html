@@ -3,13 +3,52 @@
 <head>
 	<meta charset="UTF-8">
 	<title>购物车shopping</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 </head>
 <body ng-app='myApp'>
 	<div ng-controller="myController">
-		<input type="text" name="" ng-model='name'>
-		{{name}}
-		<br>
-		改变次数 {{count}}
+		<table class="table" ng-show="cart.length">
+			<thead>
+				<td>
+					<th>编号</th>
+					<th>名字</th>
+					<th>数量</th>
+					<th>单价</th>
+					<th>总价</th>
+					<th>操作</th>
+				</td>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in cart">
+					<td>{{item.id}}</td>
+					<td>{{item.name}}</td>
+					<td>{{item.quanlity}}</td>
+					<td>{{item.price}}</td>
+					<td>{{item.price*item.quanlity}}</td>
+					<td><button type="button" class="btn btn-danger" ng-click="remove(item.id)">移除</button></td>
+				</tr>
+			</tbody>
+			<tr>
+				<td>
+					总购买价
+				</td>
+				<td>
+					{{totalPrice()}}
+				</td>
+				<td>
+					总购买价 
+				</td>
+				<td>
+					{{totalNum()}}
+				</td>
+				<td>
+					<button type="button" class="btn btn-danger" ng-click="clear()">清空购物车</button>
+				</td>
+			</tr>
+		</table>
+
+		<h2 ng-show="!cart.length">您的购物车为空</h2>
+
 	</div>
 
 	<script type="text/javascript" src='angular.js'></script>
@@ -17,6 +56,62 @@
 	angular.module('myApp', [])
 		.controller('myController', ['$scope', function($scope){
 
+				$scope.cart = [
+				{
+					id:1000,
+					name:"苹果",
+					quanlity:4,
+					price:4444
+				},
+				{
+					id:2000,
+					name:"香蕉",
+					quanlity:5,
+					price:5555
+				},
+				{
+					id:3000,
+					name:"西瓜",
+					quanlity:6,
+					price:6666
+				}
+				];
+
+				$scope.totalPrice = function(){
+					var total = 0;
+					angular.forEach($scope.cart,function(item){
+						total += item.quanlity *item.price
+					});
+					return total;
+				};  
+
+				$scope.totalNum = function(){
+					var total = 0;
+					angular.forEach($scope.cart,function(item){
+						total += item.quanlity 
+					});
+					return total;
+				};	
+
+				$scope.remove = function(id){
+					// alert(id)
+					// ng-click自动执行脏检查
+					var index = -1;
+
+					angular.forEach($scope.cart, function(item,key){
+						if(item.id==id){
+							index = key;
+						}
+					});
+
+					if(index !== -1 ){
+						$scope.cart.splice(index,1)
+					}
+				};
+
+				$scope.clear = function(){
+					$scope.cart = []
+				}
 
 
 			
