@@ -42,12 +42,16 @@
 					{{totalNum()}}
 				</td>
 				<td>
-					<button type="button" class="btn btn-danger" ng-click="clear()">清空购物车</button>
+					<button type="button" class="btn btn-danger" ng-click="clearAll()">清空购物车</button>
 				</td>
 			</tr>
 		</table>
 
 		<h2 ng-show="!cart.length">您的购物车为空</h2> 
+
+		<div ng-show="expression">
+			
+		</div>
 
 	</div>
 
@@ -109,9 +113,9 @@
 					}
 				};
 
-				$scope.clear = function(){
+				$scope.clearAll = function(){
 					$scope.cart = []
-				}
+				};
 
 		}])
 </script>
