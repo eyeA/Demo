@@ -25,7 +25,7 @@
 					<td>{{item.name}}</td>
 					<td>
 						<button type="button" ng-click="reduce(item.id)" class="btn btn-primary">-</button>
-						<input type="text" name="" value='{{item.quanlity}}'>
+						<input type="number" min='0' name="" value='{{item.quanlity}}'>
 						<button type="button" ng-click="add(item.id)" class="btn btn-primary">+</button>
 					</td>
 					<td>{{item.price}}</td>
@@ -156,13 +156,22 @@
 							if(item.quanlity<8){
 								item.quanlity++;
 							}else{
-								// alert('超出数量限制咯');
-								out = false;
+								alert('超出数量限制咯');
+								// out = false;
 							}
 						}
 					});
 					return index;
 				};
+// 添加监听
+				$scope.$watch('cart', function(newValue, oldValue, scope) {
+					// console.log(oldValue);
+					angular.forEach($scope.cart, function(item, key){
+						if(item.quanlity<1){
+
+						}
+					});
+				}, true);
 
 		}])
 </script>
