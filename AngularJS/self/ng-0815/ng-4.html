@@ -20,15 +20,21 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="item in cart">
+					<td></td>
 					<td>{{item.id}}</td>
 					<td>{{item.name}}</td>
-					<td>{{item.quanlity}}</td>
+					<td>
+						<button type="button" ng-click="reduce(item.id)" class="btn btn-primary">-</button>
+						<input type="text" name="" value='{{item.quanlity}}'>
+						<button type="button" ng-click="add(item.id)" class="btn btn-primary">+</button>
+					</td>
 					<td>{{item.price}}</td>
 					<td>{{item.price*item.quanlity}}</td>
 					<td><button type="button" class="btn btn-danger" ng-click="remove(item.id)">移除</button></td>
 				</tr>
 			</tbody>
 			<tr>
+				<td></td>
 				<td>
 					总购买价
 				</td>
@@ -49,8 +55,8 @@
 
 		<h2 ng-show="!cart.length">您的购物车为空</h2> 
 
-		<div ng-show="expression">
-			
+		<div ng-show="out">
+			超出数量了
 		</div>
 
 	</div>
@@ -59,6 +65,8 @@
 <script type="text/javascript">
 	angular.module('myApp', [])
 		.controller('myController', ['$scope', function($scope){
+
+				var out = true;
 
 				$scope.cart = [
 				{
@@ -80,7 +88,7 @@
 					price:6666
 				}
 				];
-
+// 统计所有的价格
 				$scope.totalPrice = function(){
 					var total = 0;
 					angular.forEach($scope.cart,function(item){
@@ -88,7 +96,7 @@
 					});
 					return total;
 				};  
-
+// 统计所有的数量
 				$scope.totalNum = function(){
 					var total = 0;
 					angular.forEach($scope.cart,function(item){
@@ -96,7 +104,7 @@
 					});
 					return total;
 				};	
-
+// 清除当前商品
 				$scope.remove = function(id){
 					// alert(id)
 					// ng-click自动执行脏检查
@@ -112,9 +120,48 @@
 						$scope.cart.splice(index,1)
 					}
 				};
-
+// 清除购物车
 				$scope.clearAll = function(){
 					$scope.cart = []
+				};
+// 减少数量
+				$scope.reduce = function(id){
+					var index;
+					angular.forEach($scope.cart, function(item, key){
+						if(item.id==id){
+							// index=key+1;
+							index=key;
+							console.log(index);
+							if(item.quanlity>0){
+								item.quanlity--;
+							}else{
+								var reduceS = confirm('确认从购物车删除当前的商品?');
+								if(reduceS){
+									$scope.remove(item.id);
+								}
+							}
+						}
+					});
+					return index;
+
+				};
+// 添加数量
+				$scope.add = function(id){
+					var index;
+					angular.forEach($scope.cart, function(item, key){
+						if(item.id==id){
+							// index=key+1;
+							index=key;
+							console.log(index);
+							if(item.quanlity<8){
+								item.quanlity++;
+							}else{
+								// alert('超出数量限制咯');
+								out = false;
+							}
+						}
+					});
+					return index;
 				};
 
 		}])

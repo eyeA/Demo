@@ -3,5 +3,11 @@
 
 2.self是practice
 
+12:08 2016/8/16 星期二
+
+3.angular-seed项目来自git@github.com:angular/angular-seed.git
+是种子项目：AngularJS种子项目，我们通常可以使用AngularJS种子项目来创建新项目。种子项目包括最新的AngularJS代码库、测试库、脚本和一个简单的应用程序示例，它包含了开发一个典型的web应用程序所需的基本配置。
+
+
 
   
