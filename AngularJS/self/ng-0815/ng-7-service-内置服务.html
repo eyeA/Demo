@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内置服务</title>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="myController">
+		当前页面的url是：<br>
+		<h3>
+			{{myService.url}}
+		</h3>
+		<h3>
+			{{welcome}}
+		</h3>
+	</div>
+
+<script type="text/javascript" src='angular.js'></script>
+<script type="text/javascript">
+angular.module('myApp', [])
+.controller('myController', ['$scope','$location','$http', function($scope,$location,$http){
+	$scope.myService = {
+		url : $location.absUrl()
+	};
+	// http服务 这里的data返回空为什么？https://www.baidu.com/
+	$http.get('welcome.html')
+		.then(function(response){
+			$scope.welcome = response.data;
+		});
+
+}])
+</script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en" ng-app="myApp">
 <head>
 	<meta charset="UTF-8">
-	<title>Filter</title>
+	<title>Filter-实现实时搜索展现功能</title>
 </head>
 <body>
 	<div ng-controller="myController">
@@ -11,8 +11,7 @@
 
 		<ul>
 			<li ng-repeat="x in data | filter:test | orderBy:'country'">
-			<!-- <li ng-repeat="x in data"> -->
-				<!-- {{x.name}} <br> -->
+			
 				{{ (x.name | uppercase) + ',' + x.country }}
 			
 			</li>
