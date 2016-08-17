@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Filter</title>
+</head>
+<body>
+	<div ng-controller="myController">
+		<p>输入过滤：</p>
+		<p><input type="text" name="" ng-model='test'></p>
+
+		<ul>
+			<li ng-repeat="x in data | filter:test | orderBy:'country'">
+			<!-- <li ng-repeat="x in data"> -->
+				<!-- {{x.name}} <br> -->
+				{{ (x.name | uppercase) + ',' + x.country }}
+			
+			</li>
+		</ul>
+	</div>
+
+<script type="text/javascript" src='angular.js'></script>
+<script type="text/javascript">
+	angular.module('myApp', [])
+.controller('myController', ['$scope', function($scope){
+	$scope.data = [
+		{
+			name:'Li',
+			country:'China'
+		},
+		{
+			name:'Wang',
+			country:'USA'
+		},
+		{
+			name:'Sun',
+			country:'Japan'
+		}
+	]
+}])
+</script>
+</body>
+</html>
