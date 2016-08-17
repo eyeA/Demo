@@ -13,6 +13,10 @@
 		<h3>
 			{{welcome}}
 		</h3>
+
+		<h3>
+			{{names}}
+		</h3>
 	</div>
 
 <script type="text/javascript" src='angular.js'></script>
@@ -22,11 +26,15 @@ angular.module('myApp', [])
 	$scope.myService = {
 		url : $location.absUrl()
 	};
-	// http服务 这里的data返回空为什么？https://www.baidu.com/
+	// http服务 这里的data返回空为什么？https://www.baidu.com/    http://www.runoob.com/try/angularjs/data/Customers_JSON.php  welcome.html
 	$http.get('welcome.html')
 		.then(function(response){
 			$scope.welcome = response.data;
 		});
+	$http.get("records-test.json")
+    .success(function(response) {
+    	$scope.names = response.records;
+    });
 
 }])
 </script>
