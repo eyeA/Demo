@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>过滤器</title>
 </head>
-<body>
+<body ng-app>	
+{{9090909090 | currency}} <br>
+{{9090909090 | currency:'¥'}} <br>
+{{9090909090 | number:2}} <br>
+{{ 1432075948123 | date:"MM/dd/yyyy @ h:mma":"UTC"}} <br>
+{{ 1432075948123 | date:"MM/dd/yyyy @ h:mma"}}
+<br>
+-------------<br>
+<input type="text" name="" ng-model='name'>
+{{name}}<br>
+uppercase: {{name|uppercase}}  <br>
+lowercase: {{name|lowercase}}
 
 
 
