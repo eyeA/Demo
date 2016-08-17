@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="myApp">
+<div ng-controller="first">
+	<input type="text" ng-model='data.name' name="">
+	<p>
+		first:{{data.name}}
+	</p>
+	<p>
+		first-message:{{Data.message}}
+	</p>
+</div>
+<div ng-controller="second">
+	<!-- <input type="text" ng-model='name' name=""> -->
+	<p>
+		second:{{data.name}}
+	</p>	
+	<p>
+		first-message:{{Data.message}}
+	</p>
+</div>
+
+<script type="text/javascript" src='angular.js'></script>
+<script type="text/javascript">
+	angular.module('myApp', [])
+
+.factory('Data', ['$scope', function($scope){
+	return {
+		message:'共享的数据'
+	};
+}])
+
+.controller('first', ['$scope',function($scope,Data){
+	// console.log($scope) 注意看控制台
+	$scope.data = {
+		name:'张三'
+	};
+	$scope.Data = Data;
+}])
+
+.controller('second', ['$scope',function($scope,Data){
+	$scope.data = $scope.$$prevSibling.data;
+	// 引用类型而不是基本类型就ok  但是最好是建立一个服务service或者factory
+	$scope.Data = Data;
+	//这里的Data如果不当参数传入的话 是undefined的
+}])
+</script>
+</body>
+</html>
