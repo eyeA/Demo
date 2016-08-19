@@ -1,0 +1,1 @@
+fis.match("*.html",{useMap:!0}),fis.match("*.{js,css}",{useHash:!0});
