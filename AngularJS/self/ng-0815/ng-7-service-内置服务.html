@@ -26,7 +26,8 @@ angular.module('myApp', [])
 	$scope.myService = {
 		url : $location.absUrl()
 	};
-	// http服务 这里的data返回空为什么？https://www.baidu.com/    http://www.runoob.com/try/angularjs/data/Customers_JSON.php  welcome.html
+	// http服务 这里的data返回空为什么？(因为存在跨域的问题)
+	// https://www.baidu.com/    http://www.runoob.com/try/angularjs/data/Customers_JSON.php  welcome.html
 	$http.get('welcome.html')
 		.then(function(response){
 			$scope.welcome = response.data;
