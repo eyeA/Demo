@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ol id="xd">
+		<todo-ietm v-for="item in lists" v-bind:todo="item"></todo-ietm>
+	</ol>
+	<script type="text/javascript" src="vue2.js"></script>
+	<script type="text/javascript">
+		Vue.component('todo-ietm',{
+			props: ['todo'],
+			template: '<li>{{todo.text}}</li>'
+		});
+
+		var xd = new Vue({
+			el: "#xd",
+			data: {
+				lists: [
+					{text: "wang"},
+					{text: "xu"},
+					{text: "fang"}
+				]
+			}
+		})
+
+
+	</script>
+</body>
+</html>

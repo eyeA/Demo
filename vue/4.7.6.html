@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ol id="xd">
+		<todo-item v-for="item in list" v-bind:todo="item"></todo-item>
+	</ol>
+	<script type="text/javascript" src="vue2.js"></script>
+	<script type="text/javascript">
+		Vue.component("todo-item",{
+			props: ["todo"],
+			template: "<li>{{todo.text}}</li>"
+		});
+		var xd = new Vue({
+			el: "#xd",
+			data: {
+				list: [
+					{text: "china"},
+					{text: "javascript"},
+					{text: "korea"}
+				] 
+			}
+		})
+	</script>
+</body>
+</html>
