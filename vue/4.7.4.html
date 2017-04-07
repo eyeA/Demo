@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<ol>
+			<li v-for="todo in todos">
+				{{ todo.text }}
+			</li>
+		</ol>
+		<ul>
+			<li v-for="todo in uls">
+				<span>{{todo.text}}</span>
+			</li>
+		</ul>
+		<p v-on:click="showContext">{{message}}</p>
+		<input type="text" name="" v-model="message">
+	</div>
+
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: "#app",
+			data: {
+				todos: [
+					{text: "china"},
+					{text: "japan"},
+					{text: "american"}
+				],
+				uls: [
+					{text: "主席"},
+					{text: "总理"},
+					{text: "代言人"}
+				],
+				message: "我爱中国abcd"
+			},
+			methods: {
+				showContext: function(){
+					this.message = this.message.split("").reverse().join("");
+				}
+			}
+		})
+	</script>
+</body>
+</html>
