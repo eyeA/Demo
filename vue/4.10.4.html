@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="xd">
+        <div id="counter">
+            <sample-counter></sample-counter>
+            <sample-counter></sample-counter>
+            <sample-counter></sample-counter>            
+        </div>
+
+        <div id="props">
+            <sample-props props-data="注意驼峰和短横线的在两个地方的同步写法"></sample-props>
+        </div>
+        <div id="dynamicProps">
+            <input v-model="content" value="dynamin props text">
+            <sample-dynamic-props v-bind:message="content"></sample-dynamic-props>
+        </div>
+    </div>
+
+    <script src="./vue2.js"></script>
+    <script>
+        // counter
+        var sample_counter = {
+            template: `<button @click="counter++">{{counter}}</button>`,
+            data: function(){
+                return {
+                    counter: 0
+                }
+            }
+        };
+        // props
+        var sample_props = {
+            template: `<p>{{propsData}}</p>`,
+            props: ['propsData']
+        };
+        // dynamic props
+        var sample_dynamic_props = {
+            template: `<p>{{message}}</p>`,
+            props: ['message']
+        }
+
+
+
+        // 实例化
+        var vm = new Vue({
+            el: "#xd",
+            data: {
+                //props_data: "props data"  // 注意这里是无效的设置，对于 props来说，必须在行内获取到 
+                content: ""   // 在动态绑定父组件的props的时候 v-model的元素必须在这里进行定义
+            },
+            components: {
+                "sample-counter": sample_counter,
+                "sample-props"  : sample_props,
+                "sample-dynamic-props": sample_dynamic_props
+            }
+        });
+    </script>
+</body>
+</html>
