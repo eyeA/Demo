@@ -20,16 +20,103 @@
         <p>origin message reverse : {{reverseMessage}}</p>
         <p>computed {{now}}</p>
 
+        <h3>Class和style</h3>
+        <div>
+            v-bind:class="{redColor: isRes, bigFont:isBig}"
+            v-bind:class="classObject" -->
+                computed: function(){
+                    return {
+                        active: this.isActive && !this.error
+                    }
+                }
+        </div>
+        <div>
+            style:
+            v-bind:style="{color: red, fontSize: 3 + 'rem'}"
+            直接绑定到一个对象:
+            span b-bind:style="styleObject"  -->
+              data: {
+                  styleObject: {
+                      color: 'red',
+                      fontSize: '14px'
+                  }
+              }
+        </div>
+        <div>
+            p v-if="conditiion" ok
+            p v-else no
+        </div>
+        <!--<template v-if="template">
+            <h3>这里的template在结果渲染之后是不会显示出来的标签</h3>
+        </template>-->
+        <h3>v-for循环</h3>
+        <div v-for="(item, index) in items">
+            {{index+1}}: {{ item.message }}
+        </div>
+        <span v-for="n in 10">{{n}}-</span>
 
+        <h3>事件处理器</h3>
+        <div>
+            <button @click="count++">点击一次,下面增加一次</button>
+            <p>点击了{{count}}次</p>
+        </div>
+        <div>
+            <button @click="alert(message)">点击弹出消息</button>
+            <button @click="alert('内联js')">内联JavaScript</button>
+        </div>
+
+        <h3>表单控件</h3>
+        <input type="checkbox" id="jack" value="jack" v-model="checkedNames">
+        <label for="jack">jack</label>
+        <input type="checkbox" id="lili" value="lili" v-model="checkedNames">
+        <label for="lili">lili</label>
+        checkedNames: {{checkedNames}}
+        <p>单选</p>
+        <input type="radio" value="one" id="one" v-model="radios">
+        <label for="one">one</label>
+        <input type="radio" value="two" id="two" v-model="radios">
+        <label for="two">two</label>
+        radios:{{radios}}
+        <p>v-for 多选</p>
+        <select name="" id="" v-model="selectedDefault">
+            <option v-for="(item, index) in selects" :value="item.value">
+                {{item.text}}
+            </option>
+        </select>
+        select: {{selectedDefault}}
+        <!--<input v-model.number="age" type="number">-->
+
+        <h3>局部注册组件</h3>
+        <jubu-zujian></jubu-zujian>
+
+    
 
     </div>
     <script src="./vue2.js"></script>
     <script>
-
+        var jubu_zujian = {
+            template: `
+             <div>这里是局部组件显示的部分</div>
+            `
+        }
         var vxd = new Vue({
             el: "#xd",
             data: {
-                message: "hello wangxud"
+                selects: [
+                    {value: "one",text: "A"},
+                    {value: "two",text: "B"},
+                    {value: "three",text: "C"}
+                ],
+                selectedDefault: "one",
+                message: "hello wangxud",
+                checked: false,
+                checkedNames: [],
+                radios: [],
+                items: [
+                    {message: 'Foo'},
+                    {message: 'Bar'}
+                ],
+                count: 0
             },
             computed: {
                 reverseMessage: function(){
@@ -38,6 +125,14 @@
                 now: function(){
                     return Date.now()
                 }
+            },
+            methods: {
+                alert: function(msg){
+                    alert(msg||message)
+                }
+            },
+            components: {
+                'jubu-zujian': jubu_zujian
             }
         })
     </script>
