@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="xd">
+        <h3>基础</h3>
+        {{1+1}}
+        <!--{{ok ? "YES" : "NO"}}-->
+        <a href="">v-bind:href="url"</a>
+        <span>v-on监听DOM事件</span>
+        <span>v-bind:属性     v-bind:disabled="someAttr"  v-bind:id="xd"</span>
+
+        <h3>计算属性</h3>
+        <p>origin message : {{ message}} </p>
+        <p>origin message reverse : {{reverseMessage}}</p>
+        <p>computed {{now}}</p>
+
+
+
+    </div>
+    <script src="./vue2.js"></script>
+    <script>
+
+        var vxd = new Vue({
+            el: "#xd",
+            data: {
+                message: "hello wangxud"
+            },
+            computed: {
+                reverseMessage: function(){
+                    return this.message.split('').reverse().join('');
+                },
+                now: function(){
+                    return Date.now()
+                }
+            }
+        })
+    </script>
+</body>
+</html>
