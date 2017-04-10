@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-for</title>
+</head>
+<body>
+  <div id="xd">
+    <input type="text" v-model="newTodoText" v-on:keyup.enter="addNewTodo" placeholder="add a new todo ...">
+    <ol>
+        <li is="todo-item" v-for="(todo, index) in todos" v-bind:key="todo" v-bind:title="todo" v-on:remove="todos.splice(index, 1)">
+            
+        </li>
+    </ol>    
+  </div>
+    <script src="./vue2.js"></script>
+    <script>
+        Vue.component("todo-item", {
+            props: ["title"],
+           template: `
+             <li>
+                {{title}}
+                <button v-on:click="$emit('remove')">Delete</button>
+             </li>
+           `
+        });
+        var xd = new Vue({
+            el: "#xd",
+            data: {
+                newTodoText: "",
+                todos: [
+                    "你好",
+                    "中国",
+                    "人民"
+                ]
+            },
+            methods: {
+                addNewTodo: function(){
+                    this.todos.push(this.newTodoText);
+                    this.newTodoText = "";
+                }
+            }
+        })
+    </script>
+</body>
+</html>

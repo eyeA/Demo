@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="xd">
+        <input type="text" v-model="addTodoText" v-on:keyup.enter="addNewTodo" placeholder="add a new todo here">
+        <ol>
+            <li is="add-todo" v-for="(item, index) in defaultLists" v-bind:title="item" v-bind:key="item" v-on:remove="defaultLists.splice(index, 1)">
+
+            </li>
+        </ol>
+    </div>
+    <script src="./vue2.js"></script>
+    <script>
+        Vue.component('add-todo',{
+            props: ['title'],
+            template: `
+              <li >
+              {{title}}
+              <button v-on:click="$emit('remove')">Delete this</button>
+              </li>
+            `
+        });
+        var xd = new Vue({
+            el: "#xd",
+            data: {
+                addTodoText: "",
+                defaultLists:[
+                    "默认1",
+                    "默认2",
+                    "默认3"
+                ]
+            },
+            methods: {
+                addNewTodo: function(){
+                    this.defaultLists.push(this.addTodoText);
+                    this.addTodoText = "";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
