@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>todolists</title>
+</head>
+<body>
+    <div id="xd">
+        <input type="text" v-model="addTodo" placeholder="add new todo item ..." v-bind:style="{paddingLeft:5+'px',paddingRight:10+'px'}" v-on:keyup.enter="addNewTodo">
+        <ol>
+            <li is="todo-list" v-for="(item, index) in todolists" v-bind:title='item' v-on:remove="todolists.splice(index, 1)">
+
+            </li>
+        </ol>
+    </div>
+    <script src="./vue2.js"></script>
+    <script>
+        var todo_list = {
+            props: ['title'],
+            template: `<li>{{title}}<button v-bind:style="{marginLeft:20 + 'px',padding:2 + 'px'}" v-on:click="$emit('remove')">Delete</button></li>`
+        };
+        var vxd = new Vue({
+            el: '#xd',
+            data: {
+                todolists: [
+                    'learn Vue',
+                    'learn React',
+                    'learn Angular'
+                ],
+                addTodo: ''
+            },
+            components: {
+                'todo-list': todo_list
+            },
+            methods: {
+                addNewTodo: function(){
+                    this.todolists.push(this.addTodo);
+                    this.addTodo = '';
+                }
+            }
+        })
+    </script>
+</body>
+</html>

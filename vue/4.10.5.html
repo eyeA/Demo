@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #xd{
+            font-size: 20px;
+        }
+        .listitem{
+            color: red;
+        }
+        .btnObject{
+            padding: 20px
+        }
+    </style>
+</head>
+<body>
+    <div id="xd">
+        <ol>
+            <todo-item v-for='(item, index) in lists' v-bind:todo='item' v-bind:key="item"></todo-item>
+        </ol>
+        <p v-bind:style='p_class'>hello vue</p>
+        
+        <!--todo-list-->
+        <div id="todo">
+            <input type="text" v-model='addToText' v-on:keyup.enter='addNewTodo' placeholder='add a new item todo...'>
+            <ol>
+                <!--<todo-list v-for="(todoText, index) in todos" v-bind:key="todoText" v-bind:todoText='addNewTodo'></todo-list>-->
+                <li is='todo-list' v-for='(items, index) in todos' v-bind:title='items' v-on:remove='todos.splice(index, 1)'></li>
+            </ol>
+        </div>
+
+    </div>
+
+    <script src="./vue2.js"></script>
+    <script>
+
+        // 注册全局组件
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template: `<li class='listitem'> {{todo.text}}</li>`
+        });
+        // todo list  作为局部组件来进行注册
+        var todo_list = {
+            props: ['title'],
+            // template: `<li>{{title}}<button v-bind:style="{padding: 20 + 'px'}" v-on:click='$emit("remove")'>Delete</button></li>`
+            template: `<li>{{title}}<button v-bind:style="btnObject" v-on:click='$emit("remove")'>Delete</button></li>`,
+            data: function(){
+                return {
+                    btnObject: 
+                        // "padding: 20px"
+                        {
+                            color: 'red',
+                            fontSize: '13px'
+                        }
+                    
+                }
+            }
+        };        
+        var vm = new Vue({
+            el: '#xd',
+            data: {
+                btnObject2: {
+                    padding: 10 + 'px'  // 行内样式 v-bind:class="{padding: 10 + 'px'}"
+                },
+                lists: [
+                    {text: 'Vue'},
+                    {text: 'Angular'},
+                    {text: 'React'}
+                ],
+                p_class: {
+                    fontSize: 20 + 'px',
+                    color: 'red'
+                },
+                todos: [
+                    'learn Vue',
+                    'learn React',
+                    'learn AngularJS'
+                ],
+                addToText: ''
+            },
+            components: {
+                'todo-list': todo_list
+            },
+            methods: {
+                addNewTodo: function(){
+                    this.todos.push(this.addToText);
+                    this.addToText = '';
+                }
+            }
+        });
+    </script
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>filter</title>
+</head>
+<body>
+    <div id="xd">
+        <span v-bind:style="{paddingLeft :4 + 'px'}" v-for="(n, index) in numbers"> {{ n }} </span>
+        <br/>
+        <span v-bind:style="{paddingLeft :4 + 'px'}" v-for="(n, index) in filterNumbers"> {{ n }} </span>
+        <br/>
+        <span v-bind:style="{paddingLeft :4 + 'px'}" v-for="n in odd(numbers)"> {{ n }} </span>
+    </div>
+    <script src="./vue2.js"></script>
+    <script>
+
+        var vm = new Vue({
+            el: '#xd',
+            data: {
+                numbers: [1,2,3,4,5,6,7,8,9,10]
+            },
+            computed: {
+                filterNumbers: function(){
+                    return this.numbers.filter(function(number){
+                        return number % 2 === 0
+                    })
+                }               
+            },
+            methods: {
+                odd: function(numbers){
+                    return numbers.filter(function(number){
+                        return number % 2 ===1
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>
