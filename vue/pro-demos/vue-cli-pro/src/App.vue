@@ -2,12 +2,21 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view></router-view>
+    <h1>{{message}}</h1>
+    <xd></xd>
   </div>
 </template>
 
 <script>
+import xd from './components/xd1'
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+    return {
+      message: 'xud App '
+    }
+  },
+  components: { xd }
 }
 </script>
 
