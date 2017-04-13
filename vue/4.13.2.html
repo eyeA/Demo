@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="xd">
+    <xd-component></xd-component>
+    <jubu-component></jubu-component>
+    <parent-component></parent-component>
+    <js-component></js-component>
+  </div>
+  <div id="xd2">
+    <xd-component></xd-component>
+  </div>
+  <script src="./vue2.js"></script>
+  <!--使用script和template标签-->
+  <script type="text/x-template" id="js-component">
+    <div>this component comes from js-component !</div>
+  </script>
+  <script>
+    // 首先创建一个组件 使用Vue.component是全局注册 可以先使用Vue.extend({})来创建组件，然后注册
+    // 另外局部注册的方式是先 定义一个队形{}，然后在实例组件里进行引用 这样的组件是局部的  可以使组件仅在另一个实例/组件的作用域中可用：
+    var xd_component = Vue.component('xd-component',{
+      template: `<p>全局注册的组件</p>`
+    });
+    
+    // 局部注册案例
+    var jubu_component = {
+      template: `<p>局部注册组件</p>`
+    }
+    // extra demos
+    var Child = Vue.extend({
+      template: `<p>This is child</p>`
+    });
+    var Parent = Vue.extend({
+      template: `<p :style='{border:1+"px"}'>This is parent<child-component></child-component></p>`,
+      components: {
+        'child-component': Child
+      }
+    });
+    // 通过script和type='x-template'标签，然后全局注册，template引入对应id，然后记得在实例挂载的元素上引入该组件即可
+    Vue.component('js-component',{
+      template: "#js-component"
+    })
+    // Vue.component('parent-component', Parent);
+    new Vue({
+      el: '#xd',
+      components: {
+        'xd-component': xd_component,  // 全局注册的组件 没必要这样 因为已经注册了 Vue.component('my-component',{}),局部注册的这样是用必要的，因为局部定义的是一个对象，不引用是无法生效的
+        'jubu-component': jubu_component,
+        'parent-component': Parent
+      }
+      
+    })
+  </script>
+</body>
+</html>
