@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!--挂载元素-->
+  <div id="app">
+    <parent-component></parent-component>
+  </div>
+  <!--模板渲染-->
+  <template id="parent_component">
+    <div id="">
+      <child-component1></child-component1>
+      <child-component2></child-component2> 
+      <button @click="showData">显示子组件的数据</button>  
+    </div>
+  </template>
+  <template id="child_component1">
+    <div id="">
+      component1
+      <button @click="showPData">显示父组件的数据</button> 
+    </div>
+  </template>
+  <template id="child_component2">
+    <div id="">
+      component2
+    </div>
+  </template>
+
+  <!--JavaScript-->
+  <script src="./vue2.js"></script>
+  <script>
+    Vue.component('parent-component', {
+      template: "#parent_component",
+      components: {
+        "child-component1": {
+          template: "#child_component1",
+          data () {
+            return {
+              msg: "1111"
+            }
+          },
+          methods: {
+            showPData: function(){
+              console.log(this.$parent.msg)
+            }
+          }
+        },
+        "child-component2": {
+          template: "#child_component2",
+          data () {
+            return {
+              msg: "2222"
+            }
+          }
+        }
+      },
+      methods: {
+        showData: function(){
+          for(var i=0,len=this.$children.length;i<len;i++){
+            console.log(this.$children[i].msg);
+          }
+        }
+      },
+      data () {
+        return {
+          msg: "父组件的msg"
+        }
+      }
+    });
+    new Vue({
+      el: "#app"
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <Child>
+      <template scope="props">
+        <span>hello from parent</span><br/>
+        <span>{{props.text}}</span>
+      </template>
+    </Child>
+    <!-- scope -->
+    <awesome-list>
+      <template scope="props" slot='item'>
+        <li>
+          {{props.text}}
+        </li>
+      </template>
+    </awesome-list>
+  </div>
+
+  <!--分割线-->
+  <template id="awesome-list">
+    <ol>
+      <slot name="item" v-for="item in lists" :text="item.text">
+        暂时无列表任务...
+      </slot>
+    </ol>
+  </template>
+  
+  <template id="child">
+    <div class="child">
+      <slot text="hello from child"></slot>
+    </div>
+  </template>
+  <!--js-->
+  <script src="./vue2.js"></script>
+  <script>
+    Vue.component('Child', {
+      template: "#child"
+    });
+    Vue.component('awesome-list', {
+      template: "#awesome-list",
+      data () {
+        return {
+          lists: [
+            {
+              text: 'wang'
+            },{
+              text: 'chinese'
+            },{
+              text: 'africa'
+            }
+          ]
+        }
+      }
+    });
+    new Vue({
+      el: "#app"
+    })
+    // 作用域插槽需要注意的是: 首先template并且加id定义模板，然后注册Vue.component(),里面的数据data返回一个函数;
+    // 在挂载元素下添加该组件，然后在组件内部继续使用template标签，此时该标签要添加scope属性和接受组件传递过来的:text=''内容
+    // 还需要注意的是 slot插槽 需要name 如果有多个需要在一个根元素下
+  </script>
+</body>
+</html>

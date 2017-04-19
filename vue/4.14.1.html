@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="xd">
+    <my-com></my-com>
+  </div>
+  <!--模板部分 -->
+  <template id="tem1">
+    <div>
+      <h1>{{message}}</h1>
+      <button @click="showMsg">Click!</button>      
+    </div>
+  </template>
+  <script src="./vue2.js"></script>
+  <script>
+    new Vue({
+      el: "#xd",
+      components: {
+        "my-com": {
+          template: "#tem1",
+          data: function(){
+            return {
+              message: "this text comes from #tem1"
+            }
+          },
+          methods: {
+            showMsg: function(){
+              console.log(this.message)
+            }
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>

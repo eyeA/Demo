@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!--挂载元素-->
+  <div id="app">
+    <modal-dialog v-show="show">
+      <header slot="header">
+        <h3>提示信息</h3>
+      </header>
+      <section slot="body">
+        <p>主体部分</p>
+      </section>
+      <footer slot="footer">
+        <div>版权所有</div>
+      </footer>
+    </modal-dialog>
+    <!--vn.vuejs.org示例-->
+    <modal-demo>
+      <h3 slot="header">这里是头部</h3>
+      <div slot="main">
+        <p>template里有main但是这个部分没有联系slot的name</p>
+        <div>这里内容同上一个元素</div>        
+      </div>
+      <div slot="footer">版权所有</div>
+    </modal-demo>
+    <button @click="toggleDialog">Toggle提示框</button>
+  </div>
+  <!--模板渲染部分-->
+  <template id="dialog">
+    <div id="dialog-content">
+      <slot name="header"></slot>
+      <slot name="body"></slot>
+      <slot name="footer"></slot>      
+    </div>
+  </template>
+  <template id="demo">
+    <div>
+      <header>
+        <slot name="header"></slot>
+      </header>
+      <main>
+        <slot name="main"></slot>
+      </main>
+      <footer>
+        <slot name="footer"></slot>
+      </footer>      
+    </div>
+  </template>
+  <!--js部分-->
+  <script src="./vue2.js"></script>
+  <script>
+    Vue.component("modal-dialog", {
+      template: "#dialog",
+      props: ["show"]
+    });
+    Vue.component("modal-demo", {
+      template: "#demo"
+    });
+    new Vue({
+      el: "#app",
+      data: {
+        show: false
+      },
+      methods: {
+        toggleDialog: function(){
+          this.show = !this.show
+        }
+      }
+    });
+  </script>
+</body>
+</html>
