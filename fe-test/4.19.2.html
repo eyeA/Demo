@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1
+    // for(var i=0;i<5;i++){
+    //   (function(j){
+    //     setTimeout(function(){
+    //       console.log(new Date(), j)
+    //     }, 1000);       
+    //   })(i);
+    // }
+
+    // 2
+    // for(var i=0;i<5;i++){
+    //   setTimeout(function(j){
+    //     console.log(new Date(), j)
+    //   }, 1000, i)
+    // }
+
+    // 3
+    // var output = function(i){
+    //   setTimeout(function(){
+    //     console.log(new Date(), i)
+    //   },1000)
+    // };
+    // for(var i=0;i<5;i++){
+    //   output(i)
+    // };
+
+    // 4 :  0 1 2 3 4 5 
+    // var output = function(i){
+    //   setTimeout(function(){
+    //     console.log(new Date(), i)
+    //   },1000*i)
+    // };
+    // for(var i=0;i<5;i++){
+    //   output(i);
+    // };    
+    // console.log(new Date(), i);
+    
+    // 5 promise  ES6
+    // const tasks = [];
+    // for (var i = 0; i < 5; i++) {   // 这里 i 的声明不能改成 let，如果要改该怎么做？
+    //     ((j) => {
+    //         tasks.push(new Promise((resolve) => {
+    //             setTimeout(() => {
+    //                 console.log(new Date, j);
+    //                 resolve();  // 这里一定要 resolve，否则代码不会按预期 work
+    //             }, 1000 * j);   // 定时器的超时时间逐步增加
+    //         }));
+    //     })(i);
+    // }
+
+    // Promise.all(tasks).then(() => {
+    //     setTimeout(() => {
+    //         console.log(new Date, i);
+    //     }, 1000);   // 注意这里只需要把超时设置为 1 秒
+    // });
+
+    // 6 
+    // var newPromise = new Promise(function(){
+    //   console.log('resolve')
+    // },function(){
+    //   console.log('rejecteds')
+    // })
+
+    // 7
+    // const tasks = [];
+    // const output = (i) => new Promise((resolve)=>{
+    //   setTimeout(()=>{
+    //     console.log(new Date(), i);
+    //     resolve()
+    //   },1000*1)
+    // });
+    // // 生成全部任务
+    // for(var i=0;i<5;i++){
+    //   tasks.push(output(i))
+    // };
+    // // 所有的 异步后 输出i 即 5
+    // Promise.all(tasks).then(()=>{
+    //   setTimeout(()=>{
+    //     console.log(new Date(), i)
+    //   }, 1000)
+    // });
+
+    // ES7
+    // 模拟其他语言中的 sleep，实际上可以是任何异步操作
+    const sleep = (timeountMS) => new Promise((resolve) => {
+        setTimeout(resolve, timeountMS);
+    });
+
+    (async () => {  // 声明即执行的 async 函数表达式
+        for (var i = 0; i < 5; i++) {
+            if (i > 0) {
+                await sleep(1000);
+            }
+            console.log(new Date, i);
+        }
+
+        await sleep(1000);
+        console.log(new Date, i);
+    })();    
+
+
+
+  </script>
+</body>
+</html>

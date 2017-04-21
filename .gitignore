@@ -6,7 +6,7 @@
 /.idea
 /vue/.vscode/*
 /npm-debug.log
-
+./vscode
 /node_modules
 /assets
 /.sass-cache

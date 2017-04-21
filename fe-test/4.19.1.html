@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style lang="">
+    li{
+      width: 200px;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: gray;
+    }
+  </style>
+</head>
+<body>
+  <ul id="list">
+
+  </ul>
+  <ul id="js-list">
+
+  </ul>
+  <ol id="js-ol-list">
+
+  </ol>
+  <script>
+    var lists_container = document.getElementById("list");
+    for(var i=0;i<3;i++){
+      var lists_li = document.createElement("li");
+      lists_li.innerText = i;
+      lists_container.appendChild(lists_li);
+    };
+
+  (() => {
+      var ndContainer = document.getElementById('js-list');
+      if (!ndContainer) {
+          return;
+      }
+
+      for (var i = 0; i < 3; i++) {
+          var ndItem = document.createElement('li');
+          ndItem.innerText = i + 1;
+          ndContainer.appendChild(ndItem);
+      }
+  })(); 
+
+  (()=>{
+    console.log(666)
+  })(); 
+
+  // 分隔线
+  (()=>{
+    var ndContainer = document.getElementById("js-ol-list");
+    if(!ndContainer){
+      return;
+    }
+    for(let i=0;i<3;i++){
+      var ndOl = document.createElement("li");
+      ndOl.innerText = i + 1;
+      ndContainer.appendChild(ndOl);
+      // ndOl.addEventListener('click', ()=>{
+      //   console.log(i);
+      // });   // 当数据量大的时候，显然注册的事件会很多很多，这时候需要用到事件委托
+    };
+    ndContainer.addEventListener("click", function(e){
+      const target = e.target;
+      if(target.tagName === "LI"){
+        console.log(typeof(target.tagName));
+      }
+    })
+  })()
+  </script>
+</body>
+</html>
